@@ -48,7 +48,7 @@ export class CarrierObjectiveComponent implements OnInit {
     this.userId = this.route.snapshot.params['userId'];
     this.retrievingDetailsById();
     //for undefined error in the console 
-    this.userDetail = new User(1,"Avi",new Date(),this.file);
+    this.userDetail = new User(1,"Avi",new Date(),this.file,"","","");
   }
 
   //retieval of logged in detail in 2nd page carrier objective

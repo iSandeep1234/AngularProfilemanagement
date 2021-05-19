@@ -5,6 +5,8 @@ export class User {
     dateOfBirth : Date;
     profilePic : File;
     carrierobjective : string;
+    
+    
 
      constructor(userId : number, userName : string, dateOfBirth : Date, profilePic : File, carrierobjective : string){}
 }
