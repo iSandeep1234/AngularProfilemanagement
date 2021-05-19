@@ -1,0 +1,14 @@
+<h1>Admin Login!</h1>
+<div class="container">
+    <div *ngIf="invalidLogin" class="alert alert-warning">{{ errorMessage }}</div>
+    <div>
+        <form (ngSubmit) ="adminLoginHandler()" #adminLogin = "ngForm">
+            
+                AdminName:<input type="text" name="userName" [(ngModel)]="adminName">
+                Password:<input type="password" name="userPassword" [(ngModel)]="adminPassword">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <!-- <button (click)="print()" class="btn btn-success">Submit</button> -->
+
+        </form>
+    </div>
+</div>

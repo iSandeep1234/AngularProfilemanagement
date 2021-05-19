@@ -1,0 +1,23 @@
+<h1>Curriculum Vitae of Developers</h1>
+<!-- <div class="alert alert-success" *ngIf="message">{{ message }}</div> -->
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Date of Birth</th>
+            <th></th>
+           <!--  <th>Delete</th> -->
+        </tr>
+        <tr *ngFor = "let user of userList">
+            <td>{{ user.userId }}</td>
+            <td>{{ user.userName }}</td>
+            <td>{{ user.dateOfBirth | date | uppercase}}</td>
+            <td><button (click) = "viewCv(user.userId,user.userName)" class="btn btn-success">View</button></td>
+           <!--  <td><button (click) = "deleteTodo(todo.name, todo.id)" class="btn btn-danger">Delete</button></td> -->
+        </tr>
+    </table>
+    <!-- <div class="row">
+        <button class="btn btn-success" (click)="addTodo()">Add</button>
+    </div> -->
+</div>

@@ -1,0 +1,13 @@
+<h1>Login!</h1>
+<div class="container">
+    <div *ngIf="invalidLogin" class="alert alert-warning">{{ errorMessage }}</div>
+    <div>
+        <form (ngSubmit) ="basicLoginHandler()">
+            Username:<input type="text" name="UserName" [(ngModel)]="userName">
+            Password:<input type="date" name="DateOfBirth" [(ngModel)]="dateOfBirth">
+            <button type = "submit" class="btn btn-success">Submit</button>
+            <!-- <button (click)="print()" class="btn btn-success">Submit</button> -->
+        </form>
+
+    </div>
+</div>

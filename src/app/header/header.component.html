@@ -1,0 +1,15 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="" class="navbar-brand">Developer CV</a></div>
+        <ul class="navbar-nav">
+            <li><a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" href="/home" class="nav-link">Home</a></li>
+            <!-- <li><a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" href="/todo" class="nav-link">User</a></li> -->
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardcodeAuthenticationService.isUserLoggedIn()" href="/signUp" class="nav-link">New User? Sign Up</a></li>
+            <li><a *ngIf="!hardcodeAuthenticationService.isUserLoggedIn()" href="/admin" class="nav-link">Admin</a></li>
+            <li><a *ngIf="!hardcodeAuthenticationService.isUserLoggedIn()" href="/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+</header>

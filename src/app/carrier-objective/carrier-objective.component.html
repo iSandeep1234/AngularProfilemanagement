@@ -1,0 +1,74 @@
+
+<!-----------------------------------USER EDIT VIEW------------------------------------>
+<legend>User Details</legend>
+<div class = "container">
+
+    <!--<div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty">Enter valid detail</div>-->
+    <div class="alert alert-warning" *ngIf="userName.invalid && userName.dirty">Enter valid User Name!</div>
+    <div class="alert alert-warning" *ngIf="dateOfBirth.invalid && dateOfBirth.dirty">Enter valid Date of Birth!</div>
+
+    <form  (ngSubmit)="!updateForm.invalid && updateDetails()" #updateForm="ngForm">
+        <fieldset class="form-group">
+            <label>User ID</label>
+            <input type="text" [(ngModel)]="userDetail.userId" name="userId" disabled
+            #userId="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>User Name</label>
+            <input type="text" [(ngModel)]="userDetail.userName" name="userName" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" [ngModel]="userDetail.dateOfBirth | date:'yyyy-MM-dd'"
+            (ngModelChange)="userDetail.dateOfBirth = $event" name="dateOfBirth" 
+            #dateOfBirth="ngModel" class="form-control" required="required">
+        </fieldset>
+        <!--------------------------------------New Carrire Objective Part------------------------------------>
+         <fieldset class="form-group">
+            <label>Carrier Objective</label>
+
+            <textarea [(ngModel)]="userDetail.carrierobjective" name="userCarrierObj" 
+            #userName="ngModel" class="form-control" required="required" minlength="5"></textarea>
+           <!-- <input type="textarea" [(ngModel)]="userDetail.carrierobjective" name="userCarrierObj" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">-->
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Technical Skill Set</label>
+            <input type="text" [(ngModel)]="userDetail.userName" name="userName" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Education Detail</label>
+            <input type="text" [(ngModel)]="userDetail.userName" name="userName" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Experience Detail</label>
+            <input type="text" [(ngModel)]="userDetail.userName" name="userName" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Project Detail</label>
+            <input type="text" [(ngModel)]="userDetail.userName" name="userName" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Personal Detail</label>
+            <input type="text" [(ngModel)]="userDetail.userName" name="userName" 
+            #userName="ngModel" class="form-control" required="required" minlength="5">
+        </fieldset> 
+        <fieldset class="form-group">
+            <label>Select a File(s) (&lt; 1MB)</label><br/>
+            <input type="file" (change)="onFileChange($event)"  name = "userDetail.profilePic" multiple="multiple" 
+            multiple="multiple" accept="image/*" /><br/>
+            <button (click)="uploadFile()" [disabled]="!theFiles.length">Upload {{theFiles.length}} File(s)</button>
+
+        </fieldset>
+         <!--------------------------------------New Carrire Objective Part------------------------------------>
+       
+            <button type="submit" class="btn btn-success" >Update</button><br><br>
+            <button (click)="generatePdf()" class="btn btn-primary">Print</button>
+
+    </form>
+</div>

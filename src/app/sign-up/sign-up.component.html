@@ -1,0 +1,17 @@
+<h1>Sign Up!</h1>
+<div class="container">
+    <div *ngIf="invalidLogin" class="alert alert-warning">{{ errorMessage }}</div>
+    <div *ngIf="message" class="alert alert-warning">{{ message }}</div>
+    <div>
+        <form (ngSubmit)="signUpHandler()" #todoForm="ngForm">
+            <fieldset class="form-group">
+                Username:<input type="text" name="userName" [(ngModel)]="user.userName" class="form-control">
+            </fieldset>
+            <fieldset class="form-group">
+                Password:<input type="date" name="dateOfBirth" [ngModel]="user.dateOfBirth | date:'yyyy-MM-dd'" (ngModelChange)="user.dateOfBirth = $event" class="form-control">
+            </fieldset>
+            <button type="submit"  class="btn btn-success">Sign Up</button>
+            <!-- <button (click)="print()" class="btn btn-success">Submit</button> -->
+        </form>
+    </div>
+</div>
