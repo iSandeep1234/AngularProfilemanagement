@@ -6,8 +6,13 @@
     <!--<div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty">Enter valid detail</div>-->
     <div class="alert alert-warning" *ngIf="userName.invalid && userName.dirty">Enter valid User Name!</div>
     <div class="alert alert-warning" *ngIf="dateOfBirth.invalid && dateOfBirth.dirty">Enter valid Date of Birth!</div>
+    <div class="alert alert-warning" *ngIf="carrierobjective.invalid && carrierobjective.dirty">Please Enter Crrierobjective</div>
+    <div class="alert alert-warning" *ngIf="technicalSkill.invalid && technicalSkill.dirty">Please Enter Technical Skill</div>
+    <div class="alert alert-warning" *ngIf="educationDetails.invalid && educationDetails.dirty">Please Enter Education Details!</div>
+    <div class="alert alert-warning" *ngIf="experiencedDetails.invalid && experiencedDetails.dirty">Please Enter Experience Details!</div>
+    <div class="alert alert-warning" *ngIf="projectDetails.invalid && projectDetails.dirty">Please Enter Project Details!</div>
 
-    <form  (ngSubmit)="!updateForm.invalid && updateDetails()" #updateForm="ngForm">
+   <form  (ngSubmit)="!updateForm.invalid && updateDetails()" #updateForm="ngForm">
         <fieldset class="form-group">
             <label>User ID</label>
             <input type="text" [(ngModel)]="userDetail.userId" name="userId" disabled
@@ -29,39 +34,40 @@
             <label>Carrier Objective</label>
 
             <textarea [(ngModel)]="userDetail.carrierobjective" name="carrierobjective" 
-            #userName="ngModel" class="form-control" required="required" minlength="5"></textarea>
+            #carrierobjective="ngModel" class="form-control" required="required" minlength="5"></textarea>
            <!-- <input type="textarea" [(ngModel)]="userDetail.carrierobjective" name="userCarrierObj" 
             #userName="ngModel" class="form-control" required="required" minlength="5">-->
         </fieldset>
         <fieldset class="form-group">
             <label>Technical Skill Set</label>
-            <input type="text" [(ngModel)]="userDetail.technicalSkil" name="technicalSkil" 
-            #userName="ngModel" class="form-control" required="required" minlength="5">
+            <input type="text" [(ngModel)]="userDetail.technicalSkill" name="technicalSkill" 
+            #technicalSkill="ngModel" class="form-control" required="required" minlength="5">
         </fieldset>
         <fieldset class="form-group">
             <label>Education Detail</label>
             <input type="text" [(ngModel)]="userDetail.educationDetails" name="educationDetails" 
-            #userName="ngModel" class="form-control" required="required" minlength="5">
+            #educationDetails="ngModel" class="form-control" required="required" minlength="5">
         </fieldset>
         <fieldset class="form-group">
             <label>Experience Detail</label>
             <input type="text" [(ngModel)]="userDetail.experiencedDetails" name="experiencedDetails" 
-            #userName="ngModel" class="form-control" required="required" minlength="5">
+            #experiencedDetails="ngModel" class="form-control" required="required" minlength="5">
         </fieldset>
         <fieldset class="form-group">
             <label>Project Detail</label>
             <input type="text" [(ngModel)]="userDetail.projectDetails" name="projectDetails" 
-            #userName="ngModel" class="form-control" required="required" minlength="5">
+            #projectDetails="ngModel" class="form-control" required="required" minlength="5">
         </fieldset>
         <fieldset class="form-group">
             <label>Personal Detail</label>
             <input type="text" [(ngModel)]="userDetail.personalDetails" name="personalDetails" 
-            #userName="ngModel" class="form-control" required="required" minlength="5">
+            #personalDetails="ngModel" class="form-control" required="required" minlength="5">
         </fieldset> 
         <fieldset class="form-group">
             <label>Select a File(s) (&lt; 1MB)</label><br/>
             <input type="file" (change)="onFileChange($event)"  name = "userDetail.profilePic" multiple="multiple" 
-            multiple="multiple" accept="image/*" /><br/>
+            multiple="multiple" accept="image/*" 
+             required="required"/><br/>
             <button (click)="uploadFile()" [disabled]="!theFiles.length">Upload {{theFiles.length}} File(s)</button>
 
         </fieldset>

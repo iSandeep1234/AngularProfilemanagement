@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     //for issue of not getting request body through post method
-     this.user = new User(1,"Avi",new Date(),this.file);
+     this.user = new User(1,"Avi",new Date(),this.file,"","","","","","");
   }
 
   signUpHandler(){
