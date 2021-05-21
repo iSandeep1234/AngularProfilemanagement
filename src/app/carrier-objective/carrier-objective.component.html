@@ -6,10 +6,10 @@
     <!--<div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty">Enter valid detail</div>-->
     <div class="alert alert-warning" *ngIf="userName.invalid && userName.dirty">Enter valid User Name!</div>
     <div class="alert alert-warning" *ngIf="dateOfBirth.invalid && dateOfBirth.dirty">Enter valid Date of Birth!</div>
-    <div class="alert alert-warning" *ngIf="carrierobjective.invalid && carrierobjective.dirty">Please Enter Crrierobjective</div>
+    <div class="alert alert-warning" *ngIf="carrierObjective.invalid && carrierObjective.dirty">Please Enter Crrierobjective</div>
     <div class="alert alert-warning" *ngIf="technicalSkill.invalid && technicalSkill.dirty">Please Enter Technical Skill</div>
     <div class="alert alert-warning" *ngIf="educationDetails.invalid && educationDetails.dirty">Please Enter Education Details!</div>
-    <div class="alert alert-warning" *ngIf="experiencedDetails.invalid && experiencedDetails.dirty">Please Enter Experience Details!</div>
+b    <div class="alert alert-warning" *ngIf="experiencedDetails.invalid && experiencedDetails.dirty">Please Enter Experience Details!</div>
     <div class="alert alert-warning" *ngIf="projectDetails.invalid && projectDetails.dirty">Please Enter Project Details!</div>
 
    <form  (ngSubmit)="!updateForm.invalid && updateDetails()" #updateForm="ngForm">
@@ -33,10 +33,10 @@
          <fieldset class="form-group">
             <label>Carrier Objective</label>
 
-            <textarea [(ngModel)]="userDetail.carrierobjective" name="carrierobjective" 
-            #carrierobjective="ngModel" class="form-control" required="required" minlength="5"></textarea>
-           <!-- <input type="textarea" [(ngModel)]="userDetail.carrierobjective" name="userCarrierObj" 
-            #userName="ngModel" class="form-control" required="required" minlength="5">-->
+           <!-- <textarea [(ngModel)]="userDetail.carrierobjective" name="carrierobjective" 
+            #carrierobjective="ngModel" class="form-control" required="required" minlength="5"></textarea>-->
+            <input type="textarea" [(ngModel)]="userDetail.carrierObjective" name="carrierObjective" 
+            #carrierObjective="ngModel" class="form-control" required="required" minlength="5"> 
         </fieldset>
         <fieldset class="form-group">
             <label>Technical Skill Set</label>

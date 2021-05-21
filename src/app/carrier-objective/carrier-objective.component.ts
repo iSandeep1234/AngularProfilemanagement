@@ -165,7 +165,9 @@ export class CarrierObjectiveComponent implements OnInit {
 //=============================================================testing========================================//
 generatePdf(){
   // const documentDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+  
   const documentDefinition = this.getDocumentDefinition();
+  const documentDefinition1 = this.getDocumentDefinition1();
 
   pdfMake.createPdf(documentDefinition).open();
  }
@@ -190,18 +192,18 @@ generatePdf(){
           {
             text: this.userDetail.dateOfBirth
           },
-          // {
-          //   text: 'Email : ' + this.resume.email,
-          // },
+          {
+             text: 'Carrierobjective : ' + this.userDetail.carrierObjective,
+           },
           // {
           //   text: 'Contant No : ' + this.resume.contactNo,
           // },
-          // {
+          //\ {
           //   text: 'GitHub: ' + this.resume.socialProfile,
           //   link: this.resume.socialProfile,
           //   color: 'blue',
           // }
-          ],
+          ],this.getDocumentDefinition1(),this.getDocumentDefinition2
           // [
           //   this.getProfilePicObject()
           // ]
@@ -212,7 +214,84 @@ generatePdf(){
 }
 
 
-  getProfilePicObject() {
+
+
+
+
+
+getDocumentDefinition1() {
+  // ...
+  return {
+    
+      //...
+      
+        text: 'Skills',
+        style: 'header',
+      
+      
+        columns : [
+          {
+             
+              text: 'technicalSkill : ' + this.userDetail.technicalSkill,
+
+          },
+          
+        ],
+      
+
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 20, 0, 10],
+          decoration: 'underline'
+        },
+        name: {
+          fontSize: 16,
+          bold: true
+        }
+      }
+  };
+}
+
+getDocumentDefinition2() {
+  // ...
+  return {
+    
+      //...
+      
+        text: 'Skills',
+        style: 'header',
+      
+      
+        columns : [
+          {
+             
+              text: 'technicalSkill : ' + this.userDetail.personalDetails,
+
+          },
+          
+        ],
+      
+
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 20, 0, 10],
+          decoration: 'underline'
+        },
+        name: {
+          fontSize: 16,
+          bold: true
+        }
+      }
+  };
+}
+
+
+
+getProfilePicObject() {
     if (this.userDetail.profilePic) {
       return {
         //image: this.resume.profilePic ,
@@ -225,3 +304,5 @@ generatePdf(){
 
 
 }
+
+

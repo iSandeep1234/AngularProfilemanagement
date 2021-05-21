@@ -2,3 +2,8 @@
     border-left: 5px solid red ;
     box-shadow: 0 0 0.5em red;
 } 
+
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+	max-width: 1140px;
+	padding-bottom: 45px;
+}
