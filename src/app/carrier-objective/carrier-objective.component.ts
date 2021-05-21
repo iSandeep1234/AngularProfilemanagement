@@ -186,24 +186,47 @@ generatePdf(){
       {
         columns: [
           [{
-            text: this.userDetail.userName,
-            style: 'name'
+            text: 'Name :' +this.userDetail.userName,
+            
           },
           {
-            text: this.userDetail.dateOfBirth
+            text: 'Date Of Birth : ' + this.userDetail.dateOfBirth,
           },
           {
              text: 'Carrierobjective : ' + this.userDetail.carrierObjective,
            },
-          // {
-          //   text: 'Contant No : ' + this.resume.contactNo,
-          // },
+           {
+             text: 'Pesonal Details : ' + this.userDetail.personalDetails,
+           },
+           
+           {
+            text: 'Project Detils : ' + this.userDetail.projectDetails,
+          },
+
+          
+          {
+            text: 'Technical Skill : ' + this.userDetail.technicalSkill,
+          },
+
+           
+          {
+            text: 'Education Details : ' + this.userDetail.educationDetails,
+          },
+
+
+          {
+            text: 'Experience Details : ' + this.userDetail.experiencedDetails,
+          },
+
           //\ {
           //   text: 'GitHub: ' + this.resume.socialProfile,
           //   link: this.resume.socialProfile,
           //   color: 'blue',
           // }
-          ],this.getDocumentDefinition1(),this.getDocumentDefinition2
+          ],
+        //],this.getDocumentDefinition1(),this.getDocumentDefinition2
+          
+          
           // [
           //   this.getProfilePicObject()
           // ]
