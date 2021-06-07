@@ -4,9 +4,11 @@
     <div>
         <form (ngSubmit) ="adminLoginHandler()" #adminLogin = "ngForm">
             
-                AdminName:<input type="text" name="userName" [(ngModel)]="adminName">
+                UserName:<g input type="text" name="userName" [(ngModel)]="adminName">
                 Password:<input type="password" name="userPassword" [(ngModel)]="adminPassword">
                 <button type="submit" class="btn btn-success">Submit</button>
+                
+                
                 <!-- <button (click)="print()" class="btn btn-success">Submit</button> -->
 
         </form>
